@@ -14,7 +14,7 @@ RUN apt-get update \
 
 RUN wget --no-check-certificate -O v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
 	&& mkdir ./v2ray64 \
-	&& unzip v2ray.zip ./v2ray64 \
+	&& unzip -d ./v2ray64 v2ray.zip \
 	&& mv ./v2ray64/v2ray /usr/local/bin/ \
 	&& mv ./v2ray64/v2ctl /usr/local/bin/ \
 	&& chmod 777 /usr/local/bin/v2ctl \
