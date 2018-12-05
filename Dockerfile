@@ -12,9 +12,9 @@ ADD entrypoint.sh /etc/
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends wget unzip php-fpm php-curl php-cli php-mcrypt php-mysql php-readline
 
-RUN wget --no-check-certificate -O v2ray64.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
+RUN wget --no-check-certificate -O v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
 	&& mkdir ./v2ray64 \
-        && unzip v2ray64.zip ./v2ray64 \
+        && unzip v2ray.zip ./v2ray64 \
 	&& mv ./v2ray64/v2ray /usr/local/bin/ \
 	&& mv ./v2ray64/v2ctl /usr/local/bin/ \
 	&& chmod 777 /usr/local/bin/v2ctl \
