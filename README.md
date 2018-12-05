@@ -17,3 +17,4 @@ A v2ray docker image work with nginx for Arukas.
 
 - path to v2ray: https://your.domain/fuckgfw_letscrossgfw
 - path to websites: /usr/share/nginx/html/
+
