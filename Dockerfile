@@ -3,7 +3,7 @@ from nginx:latest
 ENV CLIENT_ID "f3c9cb27-746f-4e41-acf2-820bd3002676"
 ENV CLIENT_ALTERID 100
 ENV CLIENT_WSPATH "/fuckgfw_letscrossgfw"
-ENV VER=4.7.0
+ENV VER=4.7.3
 
 ADD conf/nginx.conf /etc/nginx/
 ADD conf/default.conf /etc/nginx/conf.d/
@@ -14,12 +14,12 @@ RUN apt-get update \
 
 RUN wget --no-check-certificate -O v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
 	&& unzip v2ray.zip \
-	&& mv ./v2ray-v$VER-linux-64/v2ray /usr/local/bin/ \
-	&& mv ./v2ray-v$VER-linux-64/v2ctl /usr/local/bin/ \
+	&& mv ./v2ray-linux-64/v2ray /usr/local/bin/ \
+	&& mv ./v2ray-linux-64/v2ctl /usr/local/bin/ \
 	&& chmod 777 /usr/local/bin/v2ctl \
 	&& chmod 777 /usr/local/bin/v2ray \
 	&& rm -rf v2ray.zip \
-	&& rm -rf v2ray-v$VER-linux-64
+	&& rm -rf v2ray-linux-64
 
 RUN chmod -R 777 /var/log/nginx /var/cache/nginx /var/run \
 	&& chgrp -R 0 /etc/nginx \
