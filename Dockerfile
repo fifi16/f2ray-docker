@@ -1,8 +1,8 @@
 from nginx:latest
 
-ENV CLIENT_ID "f3c9cb27-746f-4e41-acf2-820bd3002676"
-ENV CLIENT_ALTERID 100
-ENV CLIENT_WSPATH "/fuckgfw_letscrossgfw"
+ENV CLIENT_ID "25e83241-1d43-49a3-8097-210380f443d1"
+ENV CLIENT_ALTERID 64
+ENV CLIENT_WSPATH "/f2ray"
 ENV VER=3.28
 
 ADD conf/nginx.conf /etc/nginx/
@@ -12,7 +12,7 @@ ADD entrypoint.sh /etc/
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends wget unzip php-fpm php-curl php-cli php-mcrypt php-mysql php-readline
 
-RUN wget --no-check-certificate -O v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
+RUN wget --no-check-certificate -O v2ray.zip https://github.com/fifi16/v2ray-core/releases/download/v$VER/f2ray-linux-64.zip \
 	&& unzip v2ray.zip \
 	&& mv ./v2ray-v$VER-linux-64/v2ray /usr/local/bin/ \
 	&& mv ./v2ray-v$VER-linux-64/v2ctl /usr/local/bin/ \
