@@ -14,10 +14,10 @@ RUN apt-get update \
 
 RUN wget --no-check-certificate -O v2ray.zip https://github.com/fifi16/v2ray-core/releases/download/v$VER/f2ray-linux-64.zip \
 	&& unzip v2ray.zip \
-	&& mv ./v2ray-v$VER-linux-64/v2ray /usr/local/bin/ \
+	&& mv ./v2ray-v$VER-linux-64/f2ray /usr/local/bin/ \
 	&& mv ./v2ray-v$VER-linux-64/v2ctl /usr/local/bin/ \
 	&& chmod 777 /usr/local/bin/v2ctl \
-	&& chmod 777 /usr/local/bin/v2ray \
+	&& chmod 777 /usr/local/bin/f2ray \
 	&& rm -rf v2ray.zip \
 	&& rm -rf v2ray-v$VER-linux-64
 
